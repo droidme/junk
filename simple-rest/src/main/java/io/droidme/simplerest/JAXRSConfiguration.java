@@ -11,7 +11,7 @@ import javax.ws.rs.core.Application;
 /**
  * Configures a JAX-RS endpoint.
  *
- * @author reinh
+ * @author droidme
  */
 @ApplicationPath("resources")
 public class JAXRSConfiguration extends Application {

@@ -13,7 +13,7 @@ import javax.ws.rs.core.MediaType;
 
 /**
  *
- * @author reinh
+ * @author droidme
  */
 @Path("echo")
 @Produces(MediaType.APPLICATION_JSON)
