@@ -3,7 +3,7 @@
  *
  * 2017 (c) droidme.io
  */
-package io.droidme.config.boundary;
+package io.droidme.simplerest.config.boundary;
 
 import static java.lang.annotation.ElementType.FIELD;
 import static java.lang.annotation.ElementType.METHOD;

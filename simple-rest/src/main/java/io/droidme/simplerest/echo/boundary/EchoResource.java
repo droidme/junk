@@ -3,9 +3,10 @@
  *
  * 2017 (c) droidme.io
  */
-package io.droidme.simplerest.boundary;
+package io.droidme.simplerest.echo.boundary;
 
-import io.droidme.config.boundary.Property;
+import io.droidme.simplerest.config.boundary.Property;
+import java.util.logging.Logger;
 import javax.inject.Inject;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -30,8 +31,12 @@ public class EchoResource {
     @Inject
     String name;
     
+    @Inject
+    Logger log;
+    
     @GET
     public String getMessage() {
+        log.info("GET /echo");
         return this.echo + (showName ? " ".concat(name) : "");
     }
     
