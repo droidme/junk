@@ -1,2 +1,2 @@
-insert into DEVELOPER (ID, NAME) values (1, 'W. Brian Kernighan');
-insert into DEVELOPER (ID, NAME) values (1, 'M. Dennis Ritchie');
+insert into DEVELOPER (NAME) values ('W. Brian Kernighan');
+insert into DEVELOPER (NAME) values ('M. Dennis Ritchie');

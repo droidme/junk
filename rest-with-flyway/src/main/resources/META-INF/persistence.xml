@@ -4,6 +4,7 @@
     <jta-data-source>java:/jboss/datasources/sample</jta-data-source>
     <class>io.droidme.fly.developer.entity.Developer</class>
     <exclude-unlisted-classes>true</exclude-unlisted-classes>
+    <validation-mode>NONE</validation-mode>
     <properties/>
   </persistence-unit>
 </persistence>
