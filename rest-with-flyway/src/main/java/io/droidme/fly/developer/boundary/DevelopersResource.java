@@ -11,6 +11,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import static javax.ws.rs.core.MediaType.APPLICATION_JSON;
 
@@ -32,6 +33,12 @@ public class DevelopersResource {
                 .createNamedQuery(Developer.FIND_ALL, Developer.class).getResultList();
         
         return developers;
+    }
+    
+    @GET
+    @Path("{id}")
+    public String getDeveloper(@PathParam("id") int id) {
+        return "gathering Developer with id + " + id;
     }
     
 }
