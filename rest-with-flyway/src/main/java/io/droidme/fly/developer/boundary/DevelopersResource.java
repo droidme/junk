@@ -11,9 +11,11 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
+import javax.ws.rs.container.ResourceContext;
+import javax.ws.rs.core.Context;
 import static javax.ws.rs.core.MediaType.APPLICATION_JSON;
+import javax.ws.rs.core.Response;
 
 /**
  *
@@ -26,19 +28,23 @@ public class DevelopersResource {
     @PersistenceContext
     EntityManager em;
     
-    @GET
-    public List<Developer> getDevelopers() {
-        
-        List<Developer> developers = em
-                .createNamedQuery(Developer.FIND_ALL, Developer.class).getResultList();
-        
-        return developers;
-    }
+    @Context
+    ResourceContext rc;
     
     @GET
+    public Response getDevelopers() {
+        List<Developer> developers = em
+                .createNamedQuery(Developer.FIND_ALL, Developer.class).getResultList();
+        if (developers.isEmpty()) {
+            return Response.noContent().build();
+        } else {
+            return Response.ok(developers).build();
+        }
+    }
+    
     @Path("{id}")
-    public String getDeveloper(@PathParam("id") int id) {
-        return "gathering Developer with id + " + id;
+    public DeveloperResource getDeveloper() {
+        return rc.initResource(new DeveloperResource());
     }
     
 }
