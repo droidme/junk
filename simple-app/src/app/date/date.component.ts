@@ -10,7 +10,7 @@ export class DateComponent implements OnInit {
 
   private timestamp: number;
 
-  constructor() { 
+  constructor() {
     this.timestamp = 0;
   }
 
