@@ -21,7 +21,4 @@ export class DateComponent implements OnInit {
       .subscribe( ts => this.timestamp = ts);
   }
 
-
-
-
 }
