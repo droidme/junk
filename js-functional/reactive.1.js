@@ -18,4 +18,8 @@ var subscription = source.subscribe(
     () => console.log('onCompleted')
 );
 
+var sub2 = source.subscribe(
+    x => console.log('value: ', x)
+);
+
 subscription.unsubscribe();
