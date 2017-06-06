@@ -12,6 +12,11 @@
             <version>7.0</version>
             <scope>provided</scope>
         </dependency>
+        <dependency>
+            <groupId>io.droidme.registry</groupId>
+            <artifactId>registry-lib</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
     </dependencies>
     <build>
         <finalName>simple-rest</finalName>
