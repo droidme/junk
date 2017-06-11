@@ -9,7 +9,7 @@ import java.util.logging.Logger;
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 import javax.inject.Inject;
-import javax.servlet.ServletConfig;
+import javax.servlet.ServletContext;
 import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.core.Application;
 import javax.ws.rs.core.Context;
@@ -21,22 +21,25 @@ import javax.ws.rs.core.Context;
  */
 @ApplicationPath("resources")
 public class JAXRSConfiguration extends Application {
-    
+
     @Context
-    ServletConfig config;
-    
+    ServletContext context;
+
     @Inject
     Logger log;
-    
+
     @PostConstruct
-    void startUp(){
+    void startUp() {
         log.info("startup ....");
+        log.info("context path: " + context.getContextPath());
+        log.info("context server name: " + context.getVirtualServerName());
+
     }
-    
+
     @PreDestroy
     void shutDown() {
         log.info("shutdown ...");
-        
+
     }
 
 }
